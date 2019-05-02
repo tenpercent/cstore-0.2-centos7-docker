@@ -4,7 +4,7 @@ curl http://db.lcs.mit.edu/projects/cstore/cstore0.2.tar.gz | tar xz; \
 mv cstore /opt; \
 cd /opt/cstore/Build; \
 sed -i '/^LZO_LIB/ i LZO_INCLUDE := /usr/include/lzo' makefile.init; \
-sed -i 's/\(^SLEEPYCAT_DIRECTORY :=\).*/\1 /opt/bdb' makefile.init; \
+sed -i 's;\(^SLEEPYCAT_DIRECTORY :=\).*;\1 /opt/bdb;' makefile.init; \
 sed -i '/^IFLAGS/ s/.*/& -I$(LZO_INCLUDE)/' makefile.init; \
 sed -i '/^CFLAGS/ s:.*:& -fpermissive -ansi -include /usr/include/c++/4.8.5/i686-redhat-linux/bits/stdc++.h:' makefile.init; \
 sed -i 's/-ldb-4.2 -ldb_cxx-4.2/-Wl,-Bstatic & -Wl,-Bdynamic/' makefile.init; \
