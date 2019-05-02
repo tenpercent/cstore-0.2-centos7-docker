@@ -9,5 +9,5 @@ yum install -y lzo yum-utils gdb valgrind; \
 debuginfo-install -y gcc gcc-c++ lzo
 WORKDIR ../src
 RUN set -ex; \
-ln -s /opt/cstore/cstoreqp /usr/local/bin/cstoreqptest; \
+ln -s /opt/cstore/Build/cstoreqp /usr/local/bin/cstoreqptest; \
 cstoreqptest 0 createData.cnf global.cnf || true
