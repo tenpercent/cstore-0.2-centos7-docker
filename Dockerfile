@@ -30,5 +30,5 @@ WORKDIR /opt/cstore/Build
 RUN set -ex; \
 make -k -j$(nproc) 2>error.log || true; \
 ln -s /opt/cstore/Build/cstoreqp /usr/local/bin/cstoreqptest
-WORKDIR /cstore/src
+WORKDIR /opt/cstore/src
 RUN cat license.txt
