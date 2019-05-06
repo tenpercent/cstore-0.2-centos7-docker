@@ -1,5 +1,5 @@
 FROM i386/centos:7
-COPY --from=tenpercent/cstore-0.2-centos7-nodata /opt /opt
+COPY --from=tenpercent/cstore:nodata /opt /opt
 WORKDIR /opt/cstore/data
 RUN set -ex; \
 curl http://db.csail.mit.edu/data/data4.tar.gz | tar xz ; \
